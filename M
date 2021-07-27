@@ -1,0 +1,30 @@
+NAME = push_swap
+
+SRCS =	libft/ft_putchar.c			\
+		libft/ft_putstr.c			\
+		libft/ft_putendl.c			\
+		libft/ft_strlen.c			\
+
+OBJ_DIR		=	./objs
+OBJ = $(addprefix $(OBJ_DIR)/,$(SRCS:.c=.o))
+CFLAGS = -Wall -Wextra -Werror
+
+all: $(NAME)
+
+$(NAME) : $(OBJ)
+	@gcc -g $(CFLAGS) $(OBJ) -o $(NAME)
+	@echo "\n\033[32m--------- PUSH_SWAP SUCCESSFUL ---------\033[0m"
+
+$(OBJ): $(OBJ_DIR)/%.o: %.c push_swap.h
+	@mkdir -p $(dir $@)
+	gcc -c $< -o $@
+
+clean :
+	@rm -rf $(OBJ_DIR)
+	@rm -rf $(OBJ_DIR_B)
+
+fclean: clean
+	@rm -f $(NAME)
+	@rm -f $(NAME_B)
+
+re : fclean all

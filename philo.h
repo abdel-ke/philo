@@ -6,7 +6,7 @@
 /*   By: abdel-ke <abdel-ke@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 14:54:37 by abdel-ke          #+#    #+#             */
-/*   Updated: 2021/07/27 15:37:38 by abdel-ke         ###   ########.fr       */
+/*   Updated: 2021/07/27 19:56:15 by abdel-ke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
+
+FILE *file;
 
 typedef	enum	e_args
 {
@@ -40,4 +42,6 @@ int		ft_atoi(const char *str);
 int		ft_isdigit(int c);
 int		ft_error(char *msg, int ret);
 
+/*	checker	*/
+int		check_args(t_philo *philo, char **av);
 #endif

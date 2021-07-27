@@ -6,11 +6,11 @@
 /*   By: abdel-ke <abdel-ke@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/28 14:44:32 by abdel-ke          #+#    #+#             */
-/*   Updated: 2021/07/26 15:18:26 by abdel-ke         ###   ########.fr       */
+/*   Updated: 2021/07/27 19:37:49 by abdel-ke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../philo.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {

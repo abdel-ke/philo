@@ -6,11 +6,11 @@
 /*   By: abdel-ke <abdel-ke@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/18 14:46:00 by abdel-ke          #+#    #+#             */
-/*   Updated: 2021/07/26 15:36:37 by abdel-ke         ###   ########.fr       */
+/*   Updated: 2021/07/27 19:38:01 by abdel-ke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../philo.h"
 
 int	ft_atoi(const char *str)
 {

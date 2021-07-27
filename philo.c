@@ -6,7 +6,7 @@
 /*   By: abdel-ke <abdel-ke@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 14:54:35 by abdel-ke          #+#    #+#             */
-/*   Updated: 2021/07/27 15:24:54 by abdel-ke         ###   ########.fr       */
+/*   Updated: 2021/07/27 19:58:25 by abdel-ke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,24 @@ int	ft_error(char *msg, int ret)
 	return (ret);
 }
 
+void	init(t_philo *philo)
+{
+	file = fopen("/dev/ttys001", "w");
+	philo->args[0] = 1337;
+}
+
 int main(int ac, char **av)
 {
 	t_philo	philo;
 
 	ac--;
+	// fprintf(file, "\n|%d|", philo.args[0]);
+	printf("\n|%d|", philo.args[0]);
 	if (ac != 4)
-		return (ft_error("Error Args", 0));
+		return (ft_error("Error Args\n", 0));
 	else
 	{
-		if (!check_args(&philo, av));
-			return (ft_error("Error Args", 0));
+		if (!check_args(&philo, av))
+			return (ft_error("Error Args\n", 0));
 	}
 }

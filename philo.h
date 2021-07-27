@@ -6,7 +6,7 @@
 /*   By: abdel-ke <abdel-ke@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 14:54:37 by abdel-ke          #+#    #+#             */
-/*   Updated: 2021/07/26 15:35:39 by abdel-ke         ###   ########.fr       */
+/*   Updated: 2021/07/27 15:37:38 by abdel-ke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,17 @@
 #include <unistd.h>
 #include <stdlib.h>
 
+typedef	enum	e_args
+{
+	nbr_philo,
+	eating,
+	thinking,
+	sleeping
+}				t_args;
+
 typedef struct	s_philo
 {
-	int		nbr_philo;
-	int		eating;
-	int		thinking;
-	int		sleeping;
+	int		args[3];
 	int		fork;
 }				t_philo;
 
@@ -31,5 +36,8 @@ size_t	ft_strlen(const char *s);
 char	*ft_strdup(const char *s1);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
+int		ft_atoi(const char *str);
+int		ft_isdigit(int c);
+int		ft_error(char *msg, int ret);
 
 #endif

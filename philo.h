@@ -6,7 +6,7 @@
 /*   By: abdel-ke <abdel-ke@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 14:54:37 by abdel-ke          #+#    #+#             */
-/*   Updated: 2021/07/27 19:56:15 by abdel-ke         ###   ########.fr       */
+/*   Updated: 2021/07/28 19:08:44 by abdel-ke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef	enum	e_args
 
 typedef struct	s_philo
 {
-	int		args[3];
+	int		args[4];
 	int		fork;
 }				t_philo;
 

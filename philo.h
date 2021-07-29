@@ -6,7 +6,7 @@
 /*   By: abdel-ke <abdel-ke@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 14:54:37 by abdel-ke          #+#    #+#             */
-/*   Updated: 2021/07/28 23:00:59 by abdel-ke         ###   ########.fr       */
+/*   Updated: 2021/07/29 15:09:45 by abdel-ke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,19 +21,29 @@
 
 FILE *file;
 
-typedef	enum	e_args
+typedef	enum	e_philo_cycle
 {
 	nbr_philo,
 	eating,
 	thinking,
 	sleeping
-}				t_args;
+}				t_philo_cycle;
 
 typedef struct	s_philo
 {
-	int		args[4];
-	int		fork;
+	struct s_args *args;
+	int 	index;
+	int		rfork;
 }				t_philo;
+
+typedef struct	s_args
+{
+	int				args[4];
+	int				value;
+	pthread_mutex_t	*fork;
+	pthread_mutex_t	main;
+	t_philo *philo;	
+}				t_args;
 
 /* libft */
 size_t	ft_strlen(const char *s);
@@ -45,5 +55,5 @@ int		ft_isdigit(int c);
 int		ft_error(char *msg, int ret);
 
 /*	checker	*/
-int		check_args(t_philo *philo, char **av);
+int		check_args(t_args *philo, char **av);
 #endif

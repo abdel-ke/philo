@@ -6,7 +6,7 @@
 /*   By: abdel-ke <abdel-ke@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 15:25:07 by abdel-ke          #+#    #+#             */
-/*   Updated: 2021/07/28 23:03:24 by abdel-ke         ###   ########.fr       */
+/*   Updated: 2021/07/29 12:56:25 by abdel-ke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,14 @@ int	ft_checker(char **av)
 	return (1);
 }
 
-static	void	check_numbers(t_philo *philo)
+static	void	check_numbers(t_args *philo)
 {
 	if (philo->args[0] <= 1 || philo->args[1] <= 60
 		|| philo->args[2] <= 60 || philo->args[3] <= 60)
 		exit(ft_error("Error: value of an argument is out of range\n", 0));
 }
 
-int	stock_args(t_philo *philo, char **av)
+int	stock_args(t_args *philo, char **av)
 {
 	int		i;
 	int		j;
@@ -75,7 +75,7 @@ int	stock_args(t_philo *philo, char **av)
 	return (1);
 }
 
-int	check_args(t_philo *philo, char **av)
+int	check_args(t_args *philo, char **av)
 {
 	if (!ft_checker(av))
 		return (0);

@@ -6,16 +6,18 @@
 /*   By: abdel-ke <abdel-ke@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 14:54:37 by abdel-ke          #+#    #+#             */
-/*   Updated: 2021/07/28 19:08:44 by abdel-ke         ###   ########.fr       */
+/*   Updated: 2021/07/28 23:00:59 by abdel-ke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHILO_C
 #define PHILO_C
 
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
+# include <stdio.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <sys/time.h>
+# include <pthread.h>
 
 FILE *file;
 

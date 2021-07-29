@@ -6,7 +6,7 @@
 /*   By: abdel-ke <abdel-ke@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 15:25:07 by abdel-ke          #+#    #+#             */
-/*   Updated: 2021/07/28 19:15:13 by abdel-ke         ###   ########.fr       */
+/*   Updated: 2021/07/28 23:03:24 by abdel-ke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,14 @@ int	ft_checker(char **av)
 	int		i;
 	int		j;
 
-	i = 1;
+	i = 0;
 	while (av[i])
 	{
 		j = 0;
 		while (av[i][j])
 		{
-			if (av[i][j] != ' ' && av[i][j] != '+' && (av[i][j] < '0' || av[i][j] > '9'))
+			if (av[i][j] != ' ' && av[i][j] != '+'
+				&& (av[i][j] < '0' || av[i][j] > '9'))
 				return (0);
 			j++;
 		}
@@ -32,13 +33,20 @@ int	ft_checker(char **av)
 	return (1);
 }
 
+static	void	check_numbers(t_philo *philo)
+{
+	if (philo->args[0] <= 1 || philo->args[1] <= 60
+		|| philo->args[2] <= 60 || philo->args[3] <= 60)
+		exit(ft_error("Error: value of an argument is out of range\n", 0));
+}
+
 int	stock_args(t_philo *philo, char **av)
 {
 	int		i;
 	int		j;
 	int		cp;
 
-	i = 1;
+	i = 0;
 	cp = 0;
 	while (av[i])
 	{
@@ -63,6 +71,7 @@ int	stock_args(t_philo *philo, char **av)
 	}
 	if (cp != 4)
 		return (0);
+	check_numbers(philo);
 	return (1);
 }
 

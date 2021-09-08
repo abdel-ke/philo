@@ -6,7 +6,7 @@
 /*   By: abdel-ke <abdel-ke@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 14:54:35 by abdel-ke          #+#    #+#             */
-/*   Updated: 2021/08/31 14:07:30 by abdel-ke         ###   ########.fr       */
+/*   Updated: 2021/09/04 17:21:07 by abdel-ke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,21 +20,17 @@ int	ft_error(char *msg, int ret)
 
 void	init(t_args *philo)
 {
-	// file = fopen("/dev/pts/2", "w");
-	file = fopen("/dev/ttys002", "w");
 	philo->args[0] = 1337;
 }
 
 static void	*routine(void *arg)
 {
-	t_philo *philo;
-	t_args *args;
-	// printf("%d|\n", 10);
+	t_philo	*philo;
+	t_args	*args;
+
 	args = NULL;
 	philo = (t_philo*)arg;
 	args = philo->args;
-	// args->value = 10;
-	// printf("%d|\n", args->value);
 	while (1)
 	{
 		// take fork;
@@ -57,7 +53,7 @@ static void	*routine(void *arg)
 	return NULL;	
 }
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	t_args	*args;
 	int		i;
@@ -76,7 +72,7 @@ int main(int ac, char **av)
 	{
 		args->philo[i].index = i + 1;
 		args->philo[i].args = args;
-		args->philo[i].rfork = (args->philo[i].index) % args->args[0];
+		args->philo[i].rfork = args->philo[i].index % args->args[0];
 		if (pthread_mutex_init(&args->fork[i], NULL))
 			perror("init fork error");
 
@@ -96,5 +92,4 @@ int main(int ac, char **av)
 		i++;
 	}
 	pthread_mutex_lock(&args->main);
-	
 }

@@ -6,7 +6,7 @@
 /*   By: abdel-ke <abdel-ke@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 15:25:07 by abdel-ke          #+#    #+#             */
-/*   Updated: 2021/07/29 12:56:25 by abdel-ke         ###   ########.fr       */
+/*   Updated: 2021/09/04 12:36:04 by abdel-ke         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,5 @@ int	check_args(t_args *philo, char **av)
 		return (0);
 	if (!stock_args(philo, av))
 		return (0);
-	fprintf(file, "\n|%d|\t|%d|\t|%d|\t|%d|", philo->args[0], philo->args[1], philo->args[2], philo->args[3]);
-	// fprintf(file, "\n|%d|\t|%d|", philo->args[0], philo->args[3]);//, philo->args[2], philo->args[3]);
 	return (1);
 }
